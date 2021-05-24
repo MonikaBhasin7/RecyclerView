@@ -4,7 +4,6 @@ import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.raywenderlich.android.creatures.model.Food
 import java.io.IOException
 
 object CreatureStore {
