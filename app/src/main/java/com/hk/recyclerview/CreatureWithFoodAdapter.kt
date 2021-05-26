@@ -14,6 +14,9 @@ import com.hk.recyclerview.model.Food
 class CreatureWithFoodAdapter(private val creatures: List<Creature>): RecyclerView.Adapter<CreatureWithFoodAdapter.CreatureWithFoodViewHolder>() {
 
 
+    // RecycledViewPool lets you share Views between multiple RecyclerViews.
+    private val viewPool = RecyclerView.RecycledViewPool()
+
     inner class CreatureWithFoodViewHolder(val binding: ListItemCreatureWithFoodBinding):
         RecyclerView.ViewHolder(binding.root) {
 
@@ -44,7 +47,9 @@ class CreatureWithFoodAdapter(private val creatures: List<Creature>): RecyclerVi
             viewGroup,
             false
         )
-        return CreatureWithFoodViewHolder(binding)
+        val holder = CreatureWithFoodViewHolder(binding)
+        holder.binding.foodRecyclerView.setRecycledViewPool(viewPool)
+        return holder
     }
 
     override fun onBindViewHolder(holder: CreatureWithFoodViewHolder, position: Int) {
