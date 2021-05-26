@@ -1,13 +1,12 @@
-package com.hk.recyclerview.model
+package com.hk.recyclerview
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.hk.recyclerview.CreatureAdapter
-import com.hk.recyclerview.R
 import com.hk.recyclerview.databinding.ListItemCreatureBinding
+import com.hk.recyclerview.model.Creature
 
 class SingleHeartSelectionAdapter(private val creatures: List<Creature>) : RecyclerView.Adapter<SingleHeartSelectionAdapter.SingleHearSelectionViewHolder>() {
     var singleSelectedPosition = -1

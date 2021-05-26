@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/list_item_food_height"
+        android:layout_height="@dimen/list_item_food_height">
+
+        <ImageView
+            android:id="@+id/foodImage"
+            android:layout_width="@dimen/list_item_food_height"
+            android:layout_height="@dimen/list_item_food_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/food_banana"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

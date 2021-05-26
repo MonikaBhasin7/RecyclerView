@@ -6,13 +6,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hk.recyclerview.databinding.ActivityCreatureBinding
 import com.hk.recyclerview.model.CreatureStore
-import com.hk.recyclerview.model.SingleHeartSelectionAdapter
 
 class CreatureActivity : AppCompatActivity() {
 
 
     private lateinit var dataBinding : ActivityCreatureBinding
-    private val creatureAdapter = SingleHeartSelectionAdapter(CreatureStore.getCreatures())
+    private val creatureAdapter = CreatureWithFoodAdapter(CreatureStore.getCreatures())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_creature)
