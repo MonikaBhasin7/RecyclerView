@@ -32,6 +32,8 @@ class CreatureAdapter(private val creatures: List<Creature>): RecyclerView.Adapt
             else binding.ivHeart.setImageResource(R.drawable.ic_heart)
         }
 
+
+
         override fun onClick(v: View?) {
             when(v?.id) {
                 R.id.iv_heart -> {
