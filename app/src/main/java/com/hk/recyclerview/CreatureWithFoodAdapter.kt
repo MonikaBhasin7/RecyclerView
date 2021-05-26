@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.hk.recyclerview.databinding.ListItemCreatureBinding
 import com.hk.recyclerview.databinding.ListItemCreatureWithFoodBinding
@@ -49,6 +50,7 @@ class CreatureWithFoodAdapter(private val creatures: List<Creature>): RecyclerVi
         )
         val holder = CreatureWithFoodViewHolder(binding)
         holder.binding.foodRecyclerView.setRecycledViewPool(viewPool)
+        LinearSnapHelper().attachToRecyclerView(holder.binding.foodRecyclerView)
         return holder
     }
 
