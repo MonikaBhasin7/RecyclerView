@@ -3,6 +3,7 @@ package com.hk.recyclerview
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hk.recyclerview.databinding.ActivityCreatureBinding
 import com.hk.recyclerview.model.CreatureStore

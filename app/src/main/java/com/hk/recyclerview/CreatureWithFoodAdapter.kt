@@ -34,7 +34,6 @@ class CreatureWithFoodAdapter(private val creatures: List<Creature>): RecyclerVi
             binding.foodRecyclerView.layoutManager  = innerRecyclerViewLayoutManager
             innerRecyclerViewLayoutManager.scrollToPosition(creature.lastScrollPositionOfInnerRecyclerView)
             binding.foodRecyclerView.adapter = foodAdapter
-
             binding.foodRecyclerView.setOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)
