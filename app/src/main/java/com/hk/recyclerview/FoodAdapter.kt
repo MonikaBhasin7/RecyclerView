@@ -1,6 +1,7 @@
 package com.hk.recyclerview
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,12 @@ class FoodAdapter(private val foods: MutableList<Food>): RecyclerView.Adapter<Fo
                 context.resources.getIdentifier(food.thumbnail, null, context.packageName)
             )
         }
+
+    }
+
+    override fun onViewRecycled(holder: FoodViewHolder) {
+        super.onViewRecycled(holder)
+        println("ViewRecycle")
     }
 
     fun updateFoods(foods: List<Food>) {

@@ -8,7 +8,8 @@ data class Creature(
     val image: String,
     val planet: String,
     val foods: List<Int>,
-    var isFavorite: Boolean = false) {
+    var isFavorite: Boolean = false,
+    var lastScrollPositionOfInnerRecyclerView: Int = 0) {
 
     val fullName: String
         get() = "$firstName $lastName"

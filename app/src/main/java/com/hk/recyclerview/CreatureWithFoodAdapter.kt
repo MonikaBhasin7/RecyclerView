@@ -6,11 +6,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.hk.recyclerview.databinding.ListItemCreatureBinding
 import com.hk.recyclerview.databinding.ListItemCreatureWithFoodBinding
 import com.hk.recyclerview.model.Creature
 import com.hk.recyclerview.model.CreatureStore
-import com.hk.recyclerview.model.Food
 
 class CreatureWithFoodAdapter(private val creatures: List<Creature>): RecyclerView.Adapter<CreatureWithFoodAdapter.CreatureWithFoodViewHolder>() {
 
@@ -27,13 +25,33 @@ class CreatureWithFoodAdapter(private val creatures: List<Creature>): RecyclerVi
             this.creature = creature
             val context = binding.root.context
             binding.creatureImage.setImageResource(
-                context.resources.getIdentifier(creature.uri, null, context.packageName))
+                    context.resources.getIdentifier(creature.uri, null, context.packageName))
             setFoods()
         }
 
         private fun setFoods() {
-            binding.foodRecyclerView.layoutManager = LinearLayoutManager(binding.root.context, LinearLayoutManager.HORIZONTAL, false)
+            val innerRecyclerViewLayoutManager = LinearLayoutManager(binding.root.context, LinearLayoutManager.HORIZONTAL, false)
+            binding.foodRecyclerView.layoutManager  = innerRecyclerViewLayoutManager
+            innerRecyclerViewLayoutManager.scrollToPosition(creature.lastScrollPositionOfInnerRecyclerView)
             binding.foodRecyclerView.adapter = foodAdapter
+
+            binding.foodRecyclerView.setOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    val total: Int = innerRecyclerViewLayoutManager.getItemCount()
+                    val firstVisibleItemCount: Int = innerRecyclerViewLayoutManager.findFirstVisibleItemPosition()
+                    val lastVisibleItemCount: Int = innerRecyclerViewLayoutManager.findLastVisibleItemPosition()
+
+                    println("total - $total")
+                    println("firstVisibleItemCount - $firstVisibleItemCount")
+                    println("lastVisibleItemCount - $lastVisibleItemCount")
+                    creature.lastScrollPositionOfInnerRecyclerView = firstVisibleItemCount
+                }
+
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                    super.onScrollStateChanged(recyclerView, newState)
+                }
+            })
 
             val foods = CreatureStore.getCreatureFoods(creature)
             foodAdapter.updateFoods(foods)
@@ -43,10 +61,10 @@ class CreatureWithFoodAdapter(private val creatures: List<Creature>): RecyclerVi
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): CreatureWithFoodViewHolder {
         // Create a new view, which defines the UI of the list item
         val binding = DataBindingUtil.inflate<ListItemCreatureWithFoodBinding>(
-            LayoutInflater.from(viewGroup.context),
-            R.layout.list_item_creature_with_food,
-            viewGroup,
-            false
+                LayoutInflater.from(viewGroup.context),
+                R.layout.list_item_creature_with_food,
+                viewGroup,
+                false
         )
         val holder = CreatureWithFoodViewHolder(binding)
         holder.binding.foodRecyclerView.setRecycledViewPool(viewPool)
