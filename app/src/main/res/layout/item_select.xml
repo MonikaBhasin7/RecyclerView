@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_selection"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:contentDescription="@string/content_description_creature_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/colorAccent">
+
+            <TextView
+                android:id="@+id/txt_selection"
+                android:layout_width="wrap_content"
+                android:text="Show Simple RecyclerView"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif"
+                android:layout_height="wrap_content" />
+
+        </androidx.cardview.widget.CardView>
+
+
+</layout>

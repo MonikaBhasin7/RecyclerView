@@ -7,4 +7,12 @@
     <string name="content_description_favorite_button">Creature Favorite Button</string>
     <string name="detail_title_format">Creature: %1$s</string>
     <string name="content_description_creature_image">Creature Image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <string name="multiple_favorites">Linear RV with Multiple Favorites</string>
+    <string name="single_favorites">Linear RV with Single Favorites</string>
+    <string name="nested_rv">Nested RV</string>
 </resources>

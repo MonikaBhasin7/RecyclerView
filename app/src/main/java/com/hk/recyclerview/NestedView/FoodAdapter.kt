@@ -1,10 +1,10 @@
-package com.hk.recyclerview
+package com.hk.recyclerview.NestedView
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.hk.recyclerview.R
 import com.hk.recyclerview.databinding.ListItemFoodBinding
 import com.hk.recyclerview.model.Food
 
@@ -38,7 +38,7 @@ class FoodAdapter(private val foods: MutableList<Food>): RecyclerView.Adapter<Fo
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): FoodViewHolder {
         val binding = DataBindingUtil.inflate<ListItemFoodBinding>(
             LayoutInflater.from(viewGroup.context),
-            R.layout.list_item_food,
+                R.layout.list_item_food,
             viewGroup,
             false
         )

@@ -1,10 +1,11 @@
-package com.hk.recyclerview
+package com.hk.recyclerview.SingleFavorites
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.hk.recyclerview.R
 import com.hk.recyclerview.databinding.ListItemCreatureBinding
 import com.hk.recyclerview.model.Creature
 

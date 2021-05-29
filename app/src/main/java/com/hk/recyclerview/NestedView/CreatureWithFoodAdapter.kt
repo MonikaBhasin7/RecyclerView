@@ -1,4 +1,4 @@
-package com.hk.recyclerview
+package com.hk.recyclerview.NestedView
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.hk.recyclerview.R
 import com.hk.recyclerview.databinding.ListItemCreatureWithFoodBinding
 import com.hk.recyclerview.model.Creature
 import com.hk.recyclerview.model.CreatureStore
@@ -61,7 +62,7 @@ class CreatureWithFoodAdapter(private val creatures: List<Creature>): RecyclerVi
         // Create a new view, which defines the UI of the list item
         val binding = DataBindingUtil.inflate<ListItemCreatureWithFoodBinding>(
                 LayoutInflater.from(viewGroup.context),
-                R.layout.list_item_creature_with_food,
+            R.layout.list_item_creature_with_food,
                 viewGroup,
                 false
         )
