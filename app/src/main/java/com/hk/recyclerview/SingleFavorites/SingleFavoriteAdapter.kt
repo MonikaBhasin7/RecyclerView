@@ -9,7 +9,7 @@ import com.hk.recyclerview.R
 import com.hk.recyclerview.databinding.ListItemCreatureBinding
 import com.hk.recyclerview.model.Creature
 
-class SingleHeartSelectionAdapter(private val creatures: List<Creature>) : RecyclerView.Adapter<SingleHeartSelectionAdapter.SingleHearSelectionViewHolder>() {
+class SingleFavoriteAdapter(private val creatures: List<Creature>) : RecyclerView.Adapter<SingleFavoriteAdapter.SingleHearSelectionViewHolder>() {
     var singleSelectedPosition = -1
     var favCreature: Creature? = null
 

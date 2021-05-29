@@ -11,7 +11,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-
     <string name="multiple_favorites">Linear RV with Multiple Favorites</string>
     <string name="single_favorites">Linear RV with Single Favorites</string>
     <string name="nested_rv">Nested RV</string>

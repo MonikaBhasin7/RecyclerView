@@ -1,4 +1,4 @@
-package com.hk.recyclerview.NestedView
+package com.hk.recyclerview.MultipleFavorites
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import com.hk.recyclerview.R
 import com.hk.recyclerview.databinding.ListItemCreatureBinding
 import com.hk.recyclerview.model.Creature
 
-class CreatureAdapter(private val creatures: List<Creature>): RecyclerView.Adapter<CreatureAdapter.CreatureViewHolder>() {
+class MultipleFavoriteAdapter(private val creatures: List<Creature>): RecyclerView.Adapter<MultipleFavoriteAdapter.CreatureViewHolder>() {
 
     /**
      * Provide a reference to the type of views that you are using
