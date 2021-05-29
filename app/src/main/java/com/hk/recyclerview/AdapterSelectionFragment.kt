@@ -32,7 +32,19 @@ class AdapterSelectionFragment : Fragment() {
         super.onResume()
         if(activity != null) {
             adapter = SelectionAdapter(inflateList(), activity as MainActivity)
-            dataBinding.selectionRecyclerView.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
+            val layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
+            //using custom span size
+            layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                override fun getSpanSize(position: Int): Int {
+                    return if((position+1)%3==0) {
+                        2
+                    } else {
+                        1
+                    }
+                }
+
+            }
+            dataBinding.selectionRecyclerView.layoutManager = layoutManager
             dataBinding.selectionRecyclerView.adapter = adapter
         }
     }
